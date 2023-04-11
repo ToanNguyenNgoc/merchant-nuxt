@@ -2,14 +2,64 @@
   <div>
     <p v-if="pending">Loading...</p>
     List product
-    <ul>
-      <li v-for="item in products?.data" :key="item.id">{{ item.name }}</li>
+    <ul class="org-list">
+      <li class="org-item-cnt" v-for="item in products?.data" :key="item.id">
+        <NuxtLink :to="'/products/' + item.id">
+          <div class="product-item">
+            <div class="product-item_img">
+              <img :src="item.image_url ?? ''" alt="">
+            </div>
+            <div class="product-item_detail">
+              <span class="product-item_detail-name">{{ item.name }}</span>
+            </div>
+          </div>
+        </NuxtLink>
+      </li>
     </ul>
   </div>
 </template>
 <script setup>
-const { data, pending } = await useFetch('https://devapi.myspa.vn/v1/organizations', {
+const { data, pending } = await useFetch('https://api.myspa.vn/v1/organizations', {
   transform: (res) => res.context
 })
 const products = computed(() => data.value)
 </script>
+<style scoped>
+.org-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.org-item-cnt {
+  width: 16.6%;
+  padding: 12px;
+}
+.org-item-cnt a{
+  text-decoration: none;
+}
+
+.product-item_img {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+  background-color: aliceblue;
+}
+
+.product-item_img img {
+  position: absolute;
+  z-index: 1;
+  widows: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-item_detail{
+  padding: 6px 4px;
+}
+.product-item_detail-name{
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  color: rgb(53, 53, 53);
+}
+</style>
