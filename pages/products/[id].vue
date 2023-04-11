@@ -16,6 +16,7 @@ useSeoMeta({
   meta: [
     { name: 'description', content: 'My amazing site.' }
   ],
-  ogImageSecureUrl:data.value.image_url
+  ogImageSecureUrl:data.value.image_url,
+  ogImageUrl:data.value.image_url
 })
 </script>
