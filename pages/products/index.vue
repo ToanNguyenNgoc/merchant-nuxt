@@ -25,7 +25,8 @@
   </div>
 </template>
 <script setup>
-import { debounce } from "lodash";
+import lodash from 'lodash'
+const { debounce } = lodash
 definePageMeta(pageMeta)
 const page = ref(1)
 const keyword = ref('')
