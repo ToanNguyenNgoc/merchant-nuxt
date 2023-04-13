@@ -5,7 +5,6 @@
   </div>
 </template>
 <script setup>
-import { validate } from 'json-schema';
 
 definePageMeta(pageMeta)
 const route = useRoute()
