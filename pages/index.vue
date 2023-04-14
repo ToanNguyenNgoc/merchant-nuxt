@@ -1,11 +1,12 @@
 <template>
   <div>
-    <h2>Home</h2>
+    <div>{{ count }}</div>
+    <app-button @click="onCount" variant="text">Home btn</app-button>
   </div>
 </template>
 <script setup>
+import { mapState } from 'vuex';
 import store from '~/store';
-definePageMeta(pageMeta)
 const count = computed(() => store.state.countModule.count)
 const x = computed(() => store.getters['countDesc'])
 const onCount = () => {
