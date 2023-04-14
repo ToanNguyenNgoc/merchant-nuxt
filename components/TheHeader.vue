@@ -10,13 +10,13 @@
       <li class="nav-list_item">
         <NuxtLink to="/products">Product list</NuxtLink>
       </li>
-      <li class="nav-list_item">
+      <li v-if="!storeProfile.$state.profile" class="nav-list_item">
         <NuxtLink to="/sign">Sign</NuxtLink>
       </li>
-      <li class="nav-list_item">
+      <li v-if="!storeProfile.$state.profile" class="nav-list_item">
         <NuxtLink to="/sign/sign-in">Sign in</NuxtLink>
       </li>
-      <li class="nav-list_item">
+      <li v-if="storeProfile.$state.profile" class="nav-list_item">
         <NuxtLink to="/profile">My profile</NuxtLink>
       </li>
     </ul>
@@ -24,6 +24,11 @@
     </div>
   </v-container>
 </template>
+<script setup>
+import { useProfileStore } from '~/store-hooks'
+
+const storeProfile = useProfileStore()
+</script>
 <style scoped>
 .nav-list {
   display: flex;

@@ -1,5 +1,6 @@
 import { defineStore } from "pinia"
-import { axiosClient } from "~/lib"
+import { request } from "~/lib"
+import { storage } from '~/utils'
 
 export const useProfileStore = defineStore('profile', {
   state: () => ({
@@ -15,14 +16,20 @@ export const useProfileStore = defineStore('profile', {
     increment() {
       this.count++
     },
-    async getProfile() {
+    async getProfile(token?: string) {
       try {
-        const response: any = await axiosClient.get('/users/profile')
-        this.$state.profile = response.context
+        const response = await request.profile(token)
+        this.$state.profile = response.data
         this.$state.status = 'SUCCESS'
       } catch (error) {
         this.$state.status = 'FAIL'
       }
+    },
+    onLogout() {
+      const { removeItem } = storage()
+      this.$state.profile = null
+      removeItem('nuxt_tk', 'local')
+      navigateTo('/')
     }
   },
 })

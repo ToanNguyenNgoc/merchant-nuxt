@@ -14,5 +14,4 @@ const store = useProfileStore()
 function changeCount() {
   store.increment()
 }
-store.getProfile()
 </script>

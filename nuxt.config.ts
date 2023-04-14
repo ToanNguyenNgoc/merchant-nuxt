@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      apiURL: process.env.NUXT_PUBLIC_API_BASE
+    }
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }
   },

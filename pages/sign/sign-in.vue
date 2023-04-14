@@ -16,16 +16,24 @@
 </template>
 <script setup>
 import { useMutation } from "@tanstack/vue-query"
-import { axiosClient } from "~/lib";
+import { storage } from "~/utils";
+import { request } from '~/lib'
+import { useProfileStore } from '~/store-hooks'
 
+const router = useRouter()
+const profileStore = useProfileStore()
 const body = useState('body', () => { return { email: '', password: '' } })
 const { mutate, isLoading } = useMutation({
   queryKey: ['LOGIN'],
-  mutationFn: (data) => axiosClient.post('https://apihouston.click/system/auth/login', data)
+  mutationFn: (data) => request.login(data),
+  onSuccess: async (response) => {
+    storage().setItem('nuxt_tk', response.data?.token, 'local')
+    profileStore.getProfile(response.data?.token)
+    router.back()
+  }
 })
 function handleSubmit(e) {
   e.preventDefault()
-  console.log(body.value)
   mutate(body.value)
 }
 </script>
