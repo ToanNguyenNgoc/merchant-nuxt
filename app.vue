@@ -1,10 +1,16 @@
 <template>
   <div>
-    <Main>
+    <NuxtLayout>
       <NuxtPage />
-    </Main>
+    </NuxtLayout>
   </div>
 </template>
+<script setup>
+import {useProfileStore} from '~/store-hooks'
+
+const store = useProfileStore()
+store.getProfile()
+</script>
 <style>
 .layout-enter-active,
 .layout-leave-active {

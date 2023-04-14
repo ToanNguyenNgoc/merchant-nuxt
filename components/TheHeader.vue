@@ -10,6 +10,15 @@
       <li class="nav-list_item">
         <NuxtLink to="/products">Product list</NuxtLink>
       </li>
+      <li class="nav-list_item">
+        <NuxtLink to="/sign">Sign</NuxtLink>
+      </li>
+      <li class="nav-list_item">
+        <NuxtLink to="/sign/sign-in">Sign in</NuxtLink>
+      </li>
+      <li class="nav-list_item">
+        <NuxtLink to="/profile">My profile</NuxtLink>
+      </li>
     </ul>
     <div>
     </div>

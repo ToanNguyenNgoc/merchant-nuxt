@@ -5,7 +5,6 @@
   </div>
 </template>
 <script setup>
-
 definePageMeta(pageMeta)
 const route = useRoute()
 const { id } = route.params
@@ -31,5 +30,4 @@ useSeoMeta({
   ogImageSecureUrl: data?.value?.image_url,
   ogImageUrl: data?.value?.image_url
 })
-console.log(data)
 </script>

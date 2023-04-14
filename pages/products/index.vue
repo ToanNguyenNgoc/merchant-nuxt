@@ -26,8 +26,8 @@
 </template>
 <script setup>
 import lodash from 'lodash'
-const { debounce } = lodash
 definePageMeta(pageMeta)
+const { debounce } = lodash
 const page = ref(1)
 const keyword = ref('')
 const { data, pending } = await useFetch('https://api.myspa.vn/v1/organizations', {

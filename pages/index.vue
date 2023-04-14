@@ -1,15 +1,11 @@
 <template>
   <div>
     <h2>Home</h2>
-    <h3>{{ count }}</h3>
-    <br />
-    <h3>{{ x }}</h3>
   </div>
 </template>
 <script setup>
 import store from '~/store';
 definePageMeta(pageMeta)
-
 const count = computed(() => store.state.countModule.count)
 const x = computed(() => store.getters['countDesc'])
 const onCount = () => {

@@ -5,6 +5,7 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { createVuetify } from "vuetify/lib/framework.mjs";
 import store from "~/store";
+import { PiniaVuePlugin } from 'pinia'
 
 export default defineNuxtPlugin((nuxt) => {
   const vueQueryState = useState<DehydratedState | null>("vue-query");
@@ -33,8 +34,11 @@ export default defineNuxtPlugin((nuxt) => {
     components,
     directives,
   });
+  //pinia
+
   nuxt.vueApp
     .use(store)
+    .use(PiniaVuePlugin)
     .use(vuetify)
     .use(VueQueryPlugin, options);
 });
