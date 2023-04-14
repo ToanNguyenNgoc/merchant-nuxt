@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>{{ count }}</div>
+    <!-- <div>{{ count }}</div> -->
     <app-button @click="onCount" variant="text">Home btn</app-button>
   </div>
 </template>
