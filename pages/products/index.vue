@@ -1,32 +1,33 @@
 <template>
   <div>
-    <v-container>
-      <v-text-field @input="change" label="Label"></v-text-field>
-      <p v-if="pending">Loading...</p>
-      List product
-      <ul class="org-list">
-        <li class="org-item-cnt" v-for="item in data?.data" :key="item.id">
-          <NuxtLink :to="'/products/' + item.id">
-            <div class="product-item">
-              <div class="product-item_img">
-                <img :src="item.image_url ?? ''" alt="">
+      <v-container>
+        <v-text-field @input="change" label="Label"></v-text-field>
+        <p v-if="pending">Loading...</p>
+        List product
+        <ul class="org-list">
+          <li class="org-item-cnt" v-for="item in data?.data" :key="item.id">
+            <NuxtLink :to="'/products/' + item.id">
+              <div class="product-item">
+                <div class="product-item_img">
+                  <img :src="item.image_url ?? ''" alt="">
+                </div>
+                <div class="product-item_detail">
+                  <span class="product-item_detail-name">{{ item.name }}</span>
+                </div>
               </div>
-              <div class="product-item_detail">
-                <span class="product-item_detail-name">{{ item.name }}</span>
-              </div>
-            </div>
-          </NuxtLink>
-        </li>
-      </ul>
-      <div class="org-bottom">
-        <v-btn @click="onMore">more</v-btn>
-      </div>
-    </v-container>
-  </div>
+            </NuxtLink>
+          </li>
+        </ul>
+        <div class="org-bottom">
+          <v-btn @click="onMore">more</v-btn>
+        </div>
+      </v-container>
+    </div>
 </template>
 <script setup>
 import lodash from 'lodash'
 definePageMeta(pageMeta)
+
 const { debounce } = lodash
 const page = ref(1)
 const keyword = ref('')

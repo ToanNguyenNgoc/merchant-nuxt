@@ -1,18 +1,20 @@
 <template>
-  <div>
-    sign in form
-    <form @submit="handleSubmit">
-      <div>
-        <label>Email</label>
-        <v-text-field v-model="body.email" placeholder="Email" />
-      </div>
-      <div>
-        <label>Password</label>
-        <v-text-field v-model="body.password" placeholder="Password" />
-      </div>
-      <v-btn :loading="isLoading" type="submit">Login</v-btn>
-    </form>
-  </div>
+  <transition>
+    <div>
+      sign in form
+      <form @submit="handleSubmit">
+        <div>
+          <label>Email</label>
+          <v-text-field v-model="body.email" placeholder="Email" />
+        </div>
+        <div>
+          <label>Password</label>
+          <v-text-field v-model="body.password" placeholder="Password" />
+        </div>
+        <v-btn :loading="isLoading" type="submit">Login</v-btn>
+      </form>
+    </div>
+  </transition>
 </template>
 <script setup>
 import { useMutation } from "@tanstack/vue-query"

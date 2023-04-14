@@ -1,10 +1,10 @@
 <template>
-  <div>
-   <h2>Home</h2>
-  </div>
+ <div>
+      <h2>Home</h2>
+    </div>
 </template>
 <script setup>
-
+definePageMeta(pageMeta)
 </script>
 <style>
 .rotate-enter-active,

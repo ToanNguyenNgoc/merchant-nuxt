@@ -1,8 +1,8 @@
 <template>
   <div>
-    Product detail
-    <!-- {{ detail?.name }} -->
-  </div>
+      Product detail
+      <!-- {{ detail?.name }} -->
+    </div>
 </template>
 <script setup>
 definePageMeta(pageMeta)

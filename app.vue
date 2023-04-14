@@ -6,10 +6,13 @@
   </div>
 </template>
 <script setup>
-import {useProfileStore} from '~/store-hooks'
+import { useProfileStore } from '~/store-hooks'
+import { storage } from '~/utils'
 
 const store = useProfileStore()
-store.getProfile()
+if (storage().getItem('nuxt_tk', 'local')) {
+  store.getProfile()
+}
 </script>
 <style>
 .layout-enter-active,
