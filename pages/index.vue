@@ -1,17 +1,9 @@
 <template>
   <div>
-    <!-- <div>{{ count }}</div> -->
-    <app-button @click="onCount" variant="text">Home btn</app-button>
+   <h2>Home</h2>
   </div>
 </template>
 <script setup>
-import { mapState } from 'vuex';
-import store from '~/store';
-const count = computed(() => store.state.countModule.count)
-const x = computed(() => store.getters['countDesc'])
-const onCount = () => {
-  store.dispatch('ACS_COUNT', 10)
-}
 
 </script>
 <style>

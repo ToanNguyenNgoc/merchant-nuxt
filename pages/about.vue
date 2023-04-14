@@ -9,7 +9,6 @@
 import { useProfileStore } from '~/store-hooks'
 definePageMeta(pageMeta)
 
-const { pending, data: posts } = useLazyFetch('https://admin.houstongarden.vn/api/villas/4?populate=*&locale=vi')
 const store = useProfileStore()
 function changeCount() {
   store.increment()
