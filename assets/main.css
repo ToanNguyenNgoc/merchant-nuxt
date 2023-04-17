@@ -1,3 +1,18 @@
+:root {
+  --primary: #FFCCBC;
+  --orange: #F4511E;
+  --green-dark: #43A047;
+  --green-dark-2: #66BB6A;
+  --green-light: #81C784;
+  --yellow-dark: #F9A825;
+  --yellow-light: #FFEE58;
+  --grey-light: #E0E0E0;
+  --grey-dark-4: #212121;
+  --deep-orange: #FF6E40;
+  --red: #ef5350;
+  --trans: all .3s
+}
+
 html,
 body,
 div,

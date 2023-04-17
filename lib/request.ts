@@ -1,4 +1,5 @@
 import { axiosClient } from "./axios-client"
+import { BodyRegister } from "./interface"
 
 class Request {
   login(body: any) {
@@ -10,6 +11,9 @@ class Request {
         Authorization: `Bearer ${token}`
       }
     } : {})
+  }
+  register(body: BodyRegister) {
+    return axiosClient.post(`${useRuntimeConfig().public.apiURL}/customers/auth/register`, body)
   }
 }
 export const request = new Request()

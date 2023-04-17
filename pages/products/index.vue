@@ -1,11 +1,11 @@
 <template>
   <div>
-      <v-container>
-        <v-text-field @input="change" label="Label"></v-text-field>
-        <p v-if="pending">Loading...</p>
-        List product
-        <ul class="org-list">
-          <li class="org-item-cnt" v-for="item in data?.data" :key="item.id">
+    <v-container>
+      <v-text-field @input="change" label="Label"></v-text-field>
+      <!-- <p v-if="pending">Loading...</p> -->
+      List product
+      <ul class="org-list">
+        <li class="org-item-cnt" v-for="item in data?.data" :key="item.id">
             <NuxtLink :to="'/products/' + item.id">
               <div class="product-item">
                 <div class="product-item_img">
@@ -17,12 +17,12 @@
               </div>
             </NuxtLink>
           </li>
-        </ul>
-        <div class="org-bottom">
-          <v-btn @click="onMore">more</v-btn>
-        </div>
-      </v-container>
-    </div>
+      </ul>
+      <div class="org-bottom">
+        <v-btn @click="onMore">more</v-btn>
+      </div>
+    </v-container>
+  </div>
 </template>
 <script setup>
 import lodash from 'lodash'
@@ -37,8 +37,17 @@ const { data, pending } = await useFetch('https://api.myspa.vn/v1/organizations'
     limit: 6,
     page: page,
     'filter[keyword]': keyword
-  }
+  },
 })
+
+// const { data, pending } = useFetch(async () => {
+//   const res = await fetch(`https://api.myspa.vn/v1/organizations`)
+//   const data = await res.json()
+//   console.log(data)
+//   return data
+// })
+// console.log(data)
+
 const change = debounce((e) => {
   return keyword.value = e.target.value
 }, 800)

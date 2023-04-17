@@ -30,6 +30,8 @@ const { mutate, isLoading } = useMutation({
   mutationFn: (data) => request.login(data),
   onSuccess: async (response) => {
     storage().setItem('nuxt_tk', response.data?.token, 'local')
+    storage().setItem('tk_ex', response.data?.token_expired_at, 'local')
+    storage().setItem('nuxt_re_tk', response.data.refresh_token, 'local')
     profileStore.getProfile(response.data?.token)
     router.back()
   }
