@@ -1,4 +1,5 @@
 import { defineStore } from "pinia"
+import { key } from "~/constant"
 import { request } from "~/lib"
 import { storage } from '~/utils'
 
@@ -28,7 +29,9 @@ export const useProfileStore = defineStore('profile', {
     onLogout() {
       const { removeItem } = storage()
       this.$state.profile = null
-      removeItem('nuxt_tk', 'local')
+      removeItem(key.TK, 'local')
+      removeItem(key.RTK, 'local')
+      removeItem(key.TKE, 'local')
       navigateTo('/')
     }
   },

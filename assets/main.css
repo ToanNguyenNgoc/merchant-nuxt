@@ -1,15 +1,28 @@
 :root {
-  --primary: #FFCCBC;
+  --primary: #015258;
   --orange: #F4511E;
+  --white:#FFFFFF;
   --green-dark: #43A047;
   --green-dark-2: #66BB6A;
   --green-light: #81C784;
   --yellow-dark: #F9A825;
   --yellow-light: #FFEE58;
   --grey-light: #E0E0E0;
-  --grey-dark-4: #212121;
+  --grey-5:#FAFAFA;
+  --grey-3:#EEEEEE;
+  --grey-dark: #212121;
   --deep-orange: #FF6E40;
   --red: #ef5350;
+  --grey-1: #BDBDBD;
+  --grey-2: #757575;
+  --grey-3: #616161;
+  --grey-4: #424242;
+  --grey-dark: #212121;
+  --green-2: #81C784;
+  --blue-darken-1: #1E88E5;
+  --blue-darken-2: #1976D2;
+  --blue-darken-3: #1565C0;
+  --blue-darken-4: #0D47A1;
   --trans: all .3s
 }
 
@@ -117,6 +130,10 @@ section {
   display: block;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   line-height: 1;
 }
@@ -142,6 +159,32 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+.input-gl{
+  width: 100%;
+  padding:14px;
+  border: none;
+  outline: none;
+  background-color: var(--grey-5);
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.row {
+  padding: 14px 0px;
+  position: relative;
+}
+
+.row-error {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -2px;
+  margin-left: 6px;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  color: var(--orange);
 }
 
 /* page transaction */

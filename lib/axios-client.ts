@@ -1,5 +1,6 @@
 import axios from 'axios'
 import queryString from 'query-string'
+import { key } from '~/constant'
 import { IRefreshToken, IResponse } from '~/interfaces'
 import { storage } from '~/utils'
 
@@ -24,8 +25,8 @@ axiosClient.interceptors.request.use(async (config) => {
         `${useRuntimeConfig().public.apiURL}/customers/auth/refresh_token`,
         { refresh_token: refresh_token }
       )
-      storage().setItem('nuxt_tk', response?.data?.data?.token,'local')
-      storage().setItem('tk_ex', response.data?.data?.token_expired_at,'local')
+      storage().setItem(key.TK, response?.data?.data?.token, 'local')
+      storage().setItem(key.TKE, response.data?.data?.token_expired_at, 'local')
       config.headers.Authorization = `Bearer ${response?.data?.data?.token}`
     } catch (error) { }
   }
@@ -45,15 +46,15 @@ axiosClient.interceptors.response.use(
 const validRefreshToken = () => {
   let refresh = false
   const { getItem } = storage()
-  const dateString = getItem('tk_ex', 'local')
-  const token = getItem('nuxt_tk', 'local')
-  const refresh_token = getItem('nuxt_re_tk', 'local')
+  const dateString = getItem(key.TKE, 'local')
+  const token = getItem(key.TK, 'local')
+  const refresh_token = getItem(key.RTK, 'local')
   if (dateString) {
     const date = new Date()
     const dateObject = new Date(dateString);
     const milliseconds = dateObject.getTime();
     const timeCur = date.getTime()
-    if ((timeCur - milliseconds) / (60 * 1000) >= 2 && token && refresh_token) {
+    if ((timeCur > milliseconds) && token && refresh_token) {
       refresh = true
     }
   }

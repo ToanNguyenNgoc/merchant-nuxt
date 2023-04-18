@@ -4,6 +4,7 @@ import { useState } from "#app";
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { createVuetify } from "vuetify/lib/framework.mjs";
+import { mdi, aliases } from "vuetify/iconsets/mdi"
 import store from "~/store";
 import { PiniaVuePlugin } from 'pinia'
 
@@ -33,6 +34,13 @@ export default defineNuxtPlugin((nuxt) => {
     ssr: true,
     components,
     directives,
+    icons: {
+      defaultSet: 'mdi',
+      aliases,
+      sets: {
+        mdi,
+      }
+    },
   });
   //pinia
 
