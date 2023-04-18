@@ -51,11 +51,7 @@ function onBackHome() {
     height: 100dvh;
   }
   .login-cnt_body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: calc(100% - 46px);;
-    margin: 0px;
+    
   }
   .login-cnt_child{
     width: 100%;
