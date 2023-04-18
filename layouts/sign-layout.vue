@@ -48,7 +48,7 @@ function onBackHome() {
 }
 @media only screen and (max-width: 1023px) {
   .login-cnt{
-    height: 100%;
+    height: 100dvh;
   }
   .login-cnt_body{
     display: flex;
