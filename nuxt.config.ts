@@ -11,7 +11,9 @@ export default defineNuxtConfig({
   css: [
     '@/assets/main.css',
     'vuetify/lib/styles/main.sass',
-    '@mdi/font/css/materialdesignicons.css'
+    '@mdi/font/css/materialdesignicons.css',
+    'vue-slick-carousel/dist/vue-slick-carousel.css',
+    'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   ],
   build: {
     transpile: ['vuetify'],

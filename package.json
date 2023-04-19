@@ -23,6 +23,7 @@
     "query-string": "^8.1.0",
     "sass": "^1.61.0",
     "vee-validate": "^4.8.4",
+    "vue-slick-carousel": "^1.0.6",
     "vuetify": "^3.1.4",
     "vuex": "^4.1.0",
     "yup": "^1.1.1",
