@@ -18,7 +18,7 @@
 <script setup>
 
 definePageMeta(pageMeta)
-const open = useState('open', () => true)
+const open = useState('open', () => false)
 </script>
 <style>
 .rotate-enter-active,
