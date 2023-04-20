@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     'vuetify/lib/styles/main.sass',
     '@mdi/font/css/materialdesignicons.css',
     'vue-slick-carousel/dist/vue-slick-carousel.css',
-    'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+    'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
   ],
   build: {
     transpile: ['vuetify'],
@@ -21,4 +21,7 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
   ],
+  // plugins: [
+  //   { src: '~/plugins/vuesax.js', mode: 'client' }
+  // ]
 })

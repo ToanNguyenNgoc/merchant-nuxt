@@ -1,7 +1,7 @@
 <template>
   <transition>
     <div>
-      <app-snack :open="noti.open" :content="noti.content" :color="noti.color" />
+      <app-alert :open="noti.open" :content="noti.content" :color="noti.color" @on-close="noti.open = false" />
       <form @submit="handleSubmit" autocomplete="off">
         <div class="row">
           <input class="input-gl" v-model="body.email" placeholder="Email" />
@@ -51,7 +51,7 @@ const { mutate, isLoading } = useMutation({
     noti.value.open = true
     noti.value.content = `${error.response?.data?.message}`
     noti.value.color = 'var(--red)'
-    setTimeout(() => { noti.value.open = false }, 5000)
+    setTimeout(() => { noti.value.open = false }, 4000)
   }
 })
 function handleSubmit(e: Event) {

@@ -1,7 +1,7 @@
 <template>
   <transition>
     <div>
-      <app-snack :open="noti.open" :content="noti.content" :color="noti.color" @click-btn="closeNoti" />
+      <app-alert :open="noti.open" :content="noti.content" :color="noti.color" @on-close="noti.open = false" />
       <form v-if="step === 1" @submit="onSubmit">
         <div class="row">
           <input class="input-gl" v-model="body.email" placeholder="Email" />

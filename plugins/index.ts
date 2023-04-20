@@ -6,7 +6,8 @@ import * as directives from 'vuetify/directives'
 import { createVuetify } from "vuetify/lib/framework.mjs";
 import { mdi, aliases } from "vuetify/iconsets/mdi"
 import store from "~/store";
-import { PiniaVuePlugin } from 'pinia'
+import { PiniaVuePlugin } from 'pinia';
+
 
 export default defineNuxtPlugin((nuxt) => {
   const vueQueryState = useState<DehydratedState | null>("vue-query");

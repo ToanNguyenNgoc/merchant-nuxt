@@ -27,6 +27,7 @@ export const useProfileStore = defineStore('profile', {
       }
     },
     onLogout() {
+      console.log('out')
       const { removeItem } = storage()
       this.$state.profile = null
       removeItem(key.TK, 'local')
