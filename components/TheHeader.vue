@@ -20,7 +20,7 @@
           <NuxtLink class="header-txt" to="/products">Nhà hàng</NuxtLink>
         </li>
         <li class="nav-list_item">
-          <NuxtLink class="header-txt" to="/products">Giới thiệu</NuxtLink>
+          <NuxtLink class="header-txt" to="/about">Giới thiệu</NuxtLink>
         </li>
         <li class="nav-list_item">
           <NuxtLink class="header-txt" to="/products">Tin tức</NuxtLink>

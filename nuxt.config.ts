@@ -6,6 +6,19 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    head: {
+      title: 'Houston Garden villa',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'my website description'
+        }
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    },
     pageTransition: { name: 'page', mode: 'out-in' }
   },
   css: [
@@ -20,8 +33,5 @@ export default defineNuxtConfig({
   },
   modules: [
     '@pinia/nuxt',
-  ],
-  // plugins: [
-  //   { src: '~/plugins/vuesax.js', mode: 'client' }
-  // ]
+  ]
 })
